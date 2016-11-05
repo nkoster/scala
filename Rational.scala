@@ -2,8 +2,10 @@ class Rational(n: Int, d: Int) {
 
   require(d != 0)
 
-  val numer: Int = n
-  val denom: Int = d
+  private val g = gcd(n.abs, d.abs)
+
+  val numer: Int = n / g
+  val denom: Int = d / g
 
   // auxiliary constructor
   def this(n: Int) = this(n, 1)
@@ -25,5 +27,8 @@ class Rational(n: Int, d: Int) {
   def max(r: Rational): Rational =
     // if (this.lessThan(r)) r else this
     if (lessThan(r)) r else this
+
+  private def gcd(a: Int, b: Int): Int =
+    if (b == 0) a else gcd(b, a % b)
 
 }
