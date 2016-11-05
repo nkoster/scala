@@ -12,12 +12,15 @@ class Rational(n: Int, d: Int) {
 
   override def toString = numer + "/" + denom
 
-  def add(r: Rational): Rational = {
+  def + (r: Rational): Rational = {
     new Rational(
       numer * r.denom + r.numer * denom,
       denom * r.denom
     )
   }
+
+  def * (r: Rational): Rational =
+    new Rational(numer * r.numer, denom * r.denom)
 
   def lessThan(r: Rational) = {
     // this.numer * r.denom < r.numer * this.denom
