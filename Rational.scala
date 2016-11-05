@@ -5,6 +5,9 @@ class Rational(n: Int, d: Int) {
   val numer: Int = n
   val denom: Int = d
 
+  // auxiliary constructor
+  def this(n: Int) = this(n, 1)
+
   override def toString = numer + "/" + denom
 
   def add(r: Rational): Rational = {
