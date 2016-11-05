@@ -19,6 +19,9 @@ class Rational(n: Int, d: Int) {
     )
   }
 
+  def + (i: Int): Rational =
+    new Rational(numer + i * denom, denom)
+
   def * (r: Rational): Rational =
     new Rational(numer * r.numer, denom * r.denom)
 
