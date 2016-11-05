@@ -8,7 +8,8 @@ def grep(pattern: String) =
     file <- filesHere
     if file.getName.endsWith(".scala")
     line <- fileLines(file)
-    if line.trim.matches(pattern)
-  } println(file + ": " + line.trim)
+    trimmed = line.trim
+    if trimmed.matches(pattern)
+  } println(file + ": " + trimmed)
 
 grep(".*gcd.*")
