@@ -13,7 +13,7 @@ println("shorter...")
 someNumbers.filter(x => x > 1).foreach(x => println(x))
 
 println("shortest.")
-someNumbers.filter(_ > 1).foreach(x => println(x))
+someNumbers.filter(_ > 1).foreach(println _)
 
 val f = (_: Int) + (_: Int)
 f(5, 10)
