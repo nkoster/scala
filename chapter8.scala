@@ -33,3 +33,6 @@ println(b(3) + " " + b(5))
 println("------------------")
 def echo (args: String*) = args.foreach(println)
 echo ("Hi!", "Dude")
+
+val arr = Array("What", "is", "up", "doc", "?")
+echo (arr: _*)
