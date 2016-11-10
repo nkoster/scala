@@ -36,3 +36,7 @@ echo ("Hi!", "Dude")
 
 val arr = Array("What", "is", "up", "doc", "?")
 echo (arr: _*)
+
+def speed(distance: Float, time: Float): Float = distance / time
+println(speed(time = 10, distance = 100))
+
