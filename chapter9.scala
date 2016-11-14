@@ -14,6 +14,12 @@ object FileMatcher {
       if (file.getName.contains(q))
     ) yield file
 
+  def filesRegex(q: String) =
+    for (
+      file <- filesHere
+      if (file.getName.matches(q))
+    ) yield file
+
 }
 
 val f = FileMatcher
@@ -21,3 +27,5 @@ val f = FileMatcher
 f.filesEnding(".scala").foreach(println)
 println("-----------")
 f.filesContaining("chap").foreach(println)
+println("-----------")
+f.filesRegex("^[c].*$").foreach(println)
